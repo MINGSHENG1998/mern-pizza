@@ -21,3 +21,28 @@ code {
 .navbar-brand{
   color: black !important;
 }
+
+h1{
+  font-size: 20px !important;
+}
+
+.pizza{
+  &_img{
+    height: 200px;
+    width: 200px;
+  }
+
+  &_btn{
+    background-color: red !important;
+    color: white !important;
+  }
+}
+
+.flex-container{
+  display: flex !important;
+}
+
+select{
+  box-shadow: none !important;
+  border-color: black !important;
+}
