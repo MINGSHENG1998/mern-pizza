@@ -17,7 +17,7 @@ export default function Pizza({ pizza }) {
   }
 
   return (
-    <div className=" shadow-lg p-3 mb-5 bg-body rounded" key={pizza.id}>
+    <div className="shadow-lg p-3 mb-5 bg-body rounded">
       <div onClick={handleShow}>
         <h1>{pizza.name}</h1>
         <img src={pizza.image} className="img-fluid pizza_img" />
@@ -33,7 +33,7 @@ export default function Pizza({ pizza }) {
             }}
           >
             {pizza.varients.map((varient) => {
-              return <option value={varient}>{varient}</option>;
+              return <option value={varient} key={varient}>{varient}</option>;
             })}
           </select>
         </div>
@@ -48,7 +48,7 @@ export default function Pizza({ pizza }) {
             }}
           >
             {[...Array(10).keys()].map((x, i) => {
-              return <option value={i + 1}>{i + 1}</option>;
+              return <option value={i + 1} key={i}>{i + 1}</option>;
             })}
           </select>
         </div>

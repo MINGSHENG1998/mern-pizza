@@ -16,7 +16,7 @@ export default function Cart() {
           <h1>My Cart</h1>
           {cartItems.map((item) => {
             return (
-              <div className="flex-container">
+              <div className="flex-container" key={item}>
                 <div className="text-left m-1 w-100">
                   <h1>
                     {item.name} [{item.varient}]
