@@ -1,9 +1,12 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "../actions/cartActions";
+import { deleteFromCart } from "../actions/cartActions";
 
 export default function Cart() {
   const cartState = useSelector((state) => state.cartReducer);
   const cartItems = cartState.cartItems;
+  var subTotal = cartItems.reduce((x, item) => x + item.price, 0);
   const dispatch = useDispatch();
 
   return (
@@ -24,9 +27,25 @@ export default function Cart() {
                   </h1>
                   <h1 style={{ display: "inline" }}>
                     Quantity:
-                    <i className="fa fa-plus" aria-hidden="true"></i>
+                    <i
+                      className="fa fa-plus"
+                      aria-hidden="true"
+                      onClick={() => {
+                        dispatch(
+                          addToCart(item, item.quantity + 1, item.varient)
+                        );
+                      }}
+                    ></i>
                     <b>{item.quantity}</b>
-                    <i className="fa fa-minus" aria-hidden="true"></i>
+                    <i
+                      className="fa fa-minus"
+                      aria-hidden="true"
+                      onClick={() => {
+                        dispatch(
+                          addToCart(item, item.quantity - 1, item.varient)
+                        );
+                      }}
+                    ></i>
                     <hr />
                   </h1>
                 </div>
@@ -39,13 +58,22 @@ export default function Cart() {
                 </div>
 
                 <div className="m-1 w-100">
-                  <i className="fa fa-trash mt-5" aria-hidden="true"></i>
+                  <i
+                    className="fa fa-trash mt-5"
+                    aria-hidden="true"
+                    onClick={() => {
+                      dispatch(deleteFromCart(item));
+                    }}
+                  ></i>
                 </div>
               </div>
             );
           })}
         </div>
-        <div className="col-md-4"></div>
+        <div className="col-md-4 text-right">
+          <h1><b>SubTotal: RM {subTotal}</b></h1>
+          <button className="pizza_btn">CHECKOUT</button>
+        </div>
       </div>
     </div>
   );
