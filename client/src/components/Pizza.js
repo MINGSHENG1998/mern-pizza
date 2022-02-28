@@ -1,29 +1,26 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 
-export default function Pizza({ pizzas }) {
-  const { quantity, setQuantity } = useState(1);
-  const { varient, setVarient } = useState("small");
-  const { show, setShow } = useState(false);
+export default function Pizza({ pizza }) {
+  const [quantity, setQuantity] = useState(1);
+  const [varient, setVarient] = useState("small");
+  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <div
-      style={{ margin: "70px" }}
-      className=" shadow-lg p-3 mb-5 bg-body rounded"
-    >
+    <div className=" shadow-lg p-3 mb-5 bg-body rounded" key={pizza._id}>
       <div onClick={handleShow}>
-        <h1>{pizzas.name}</h1>
+        <h1>{pizza.name}</h1>
         <img src={pizza.image} className="img-fluid pizza_img" />
       </div>
       <div className="flex-container">
         <div className="m-1 w-100">
           <p>Varients</p>
           <select
-            className="form-control"
+            className="form-control form-select"
             value={varient}
-            onChange={() => {
+            onChange={(e) => {
               setVarient(e.target.value);
             }}
           >
@@ -36,9 +33,9 @@ export default function Pizza({ pizzas }) {
         <div className="m-1 w-100">
           <p>Quantity</p>
           <select
-            className="form-control"
+            className="form-control form-select"
             value={quantity}
-            onChange={() => {
+            onChange={(e) => {
               setQuantity(e.target.value);
             }}
           >
