@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route, Link, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/cart" exact element={<Cart />} />
+          <Route path="/register" exact element={<Register />} />
+          <Route path="/login" exact element={<Login />} />
         </Routes>
       </BrowserRouter>
     </div>
