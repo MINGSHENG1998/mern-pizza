@@ -17,6 +17,8 @@ src/assets/sass/theme/designer
 
 # dependencies
 /node_modules
+**/node_modules
+client/node_modules/cache
 
 # profiling files
 chrome-profiler-events.json
