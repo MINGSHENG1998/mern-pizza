@@ -70,3 +70,7 @@ input{
   margin-top: 10px !important;
   box-shadow: none !important;
 }
+
+.fixed-oversized-row{
+  --bs-gutter-x: none !important;
+}

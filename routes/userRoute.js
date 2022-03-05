@@ -9,7 +9,7 @@ router.post("/register", (req, res) => {
     newUser.save();
     res.send("User Registered Successfully!");
   } catch (error) {
-    return res.status(400).jason({ message: error });
+    return res.status(400).json({ message: error });
   }
 });
 
@@ -27,10 +27,11 @@ router.post("/login", async(req, res) => {
       };
       res.send(currentUser);
     } else {
-      return res.status(400).jason({ message: "User Login Failed..." });
+      console.log(res.status(400).json({ message: "User Login Failed..." }))
+      return res.status(400).json({ message: "User Login Failed..." });
     }
   } catch (error) {
-    return res.status(400).jason({ message: "Something went wrong..." });
+    return res.status(400).json({ message: "Something went wrong..." });
   }
 });
 

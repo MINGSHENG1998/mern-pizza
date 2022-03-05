@@ -1,12 +1,12 @@
 import React from "react";
 
-export default function Loading() {
+export default function Loading(size) {
   return (
-    <div>
+    <div className="text-center">
       <div
-        className="spinner-border mt-5"
+        className="spinner-border"
         role="status"
-        style={{ width: "5rem", height: "5rem" }}
+        style={{ width: size, height: size }}
       ></div>
     </div>
   );
