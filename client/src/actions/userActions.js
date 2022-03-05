@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const registerUsers = (user) => async (dispatch) => {
+export const registerUser = (user) => async (dispatch) => {
   dispatch({ type: "USER_REGISTER_REQUEST" });
 
   try {
@@ -11,7 +11,7 @@ export const registerUsers = (user) => async (dispatch) => {
   }
 };
 
-export const loginUsers = (user) => async (dispatch) => {
+export const loginUser = (user) => async (dispatch) => {
   dispatch({ type: "USER_LOGIN_REQUEST" });
 
   try {
@@ -22,4 +22,9 @@ export const loginUsers = (user) => async (dispatch) => {
   } catch (error) {
     dispatch({ type: "USER_LOGIN_FAILED", payload: error });
   }
+};
+
+export const logoutUser = () => () => {
+  localStorage.removeItem("currentUser");
+  window.location.href = "/login"
 };

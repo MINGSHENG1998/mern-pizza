@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { registerUsers } from "../actions/userActions";
+import { registerUser } from "../actions/userActions";
 
 export default function Register() {
   const [name, setName] = useState("");
@@ -19,7 +19,7 @@ export default function Register() {
         email,
         password,
       };
-      dispatch(registerUsers(user));
+      dispatch(registerUser(user));
     }
   }
   return (

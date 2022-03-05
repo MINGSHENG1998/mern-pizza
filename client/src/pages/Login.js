@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUsers } from "../actions/userActions";
+import { loginUser } from "../actions/userActions";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -19,7 +19,7 @@ export default function Login() {
       email,
       password,
     };
-    dispatch(loginUsers(user));
+    dispatch(loginUser(user));
   }
   return (
     <div>
