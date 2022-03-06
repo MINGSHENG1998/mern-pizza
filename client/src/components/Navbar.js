@@ -27,7 +27,7 @@ export default function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            {currentUser?.length > 0 ? (
+            {currentUser && currentUser.name ? (
               <div className="dropdown mx-2">
                 
               <a className="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">

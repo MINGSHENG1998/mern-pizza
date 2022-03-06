@@ -2,11 +2,12 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../actions/cartActions";
 import { deleteFromCart } from "../actions/cartActions";
+import Checkout from "../components/Checkout";
 
 export default function Cart() {
   const cartState = useSelector((state) => state.cartReducer);
   const cartItems = cartState.cartItems;
-  var subTotal = cartItems.reduce((x, item) => x + item.price, 0);
+  var subTotal = cartItems.reduce((x, item) => x + item.price, 0);  
   const dispatch = useDispatch();
 
   return (
@@ -81,7 +82,7 @@ export default function Cart() {
         </div>
         <div className="col-md-4 text-right">
           <h1><b>SubTotal: RM {subTotal}</b></h1>
-          <button className="pizza_btn">CHECKOUT</button>
+          <Checkout subTotal={subTotal}/>
         </div>
       </div>
     </div>
