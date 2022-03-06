@@ -57,7 +57,7 @@ Thumbs.db
 
 
 # Sensitive file
-db.js
+keys.json
 
 # cache
 client/node_modules/.cache/.eslintcache

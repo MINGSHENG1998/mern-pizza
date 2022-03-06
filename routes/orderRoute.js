@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const Order = require("../models/orderModel");
 const { v4: uuidv4 } = require("uuid");
+const key = require("./../keys.json");
 const stripe = require("stripe")(
-  "sk_test_51KaEuPHMhPy8KDcwAY2sGEJQcC1IU0k5AFmJTWvYiYjPdBUehvHTIlsbzs9MfbBax6qvxbGocxTIH0b8noK300A800p3V1lvi0"
+  key.StripePrivateKey
 );
 
 router.post("/place",  async (req, res) => {
