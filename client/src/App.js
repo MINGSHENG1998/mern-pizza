@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Order from "./pages/Order";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/cart" exact element={<Cart />} />
           <Route path="/register" exact element={<Register />} />
           <Route path="/login" exact element={<Login />} />
+          <Route path="/order" exact element={<Order />} />
         </Routes>
       </BrowserRouter>
     </div>
